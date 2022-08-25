@@ -1,0 +1,342 @@
+#line 1 "device/qcom/sepolicy/generic/private/service_contexts"
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+cneservice                                           u:object_r:vendor_cne_service:s0
+com.qualcomm.qti.ustaservice.USTAServiceImpl         u:object_r:vendor_usta_app_service:s0
+dpmservice                                     u:object_r:vendor_dpmservice:s0
+MinkBinderSvc                                  u:object_r:vendor_MinkBinderSvc:s0
+vendor.perfservice                             u:object_r:vendor_perf_service:s0
+vendor.qdtservice                              u:object_r:vendor_qdt_service:s0
+sms-sec                                        u:object_r:radio_service:s0
+extphone                                       u:object_r:radio_service:s0
+qti.radio.extphone                             u:object_r:radio_service:s0
+com.qualcomm.location.izat.IzatService         u:object_r:vendor_izat_service:s0
+qti.security.seempspa                          u:object_r:vendor_seemp_service:s0
+vendor.audio.vrservice                         u:object_r:audioserver_service:s0
+com.qti.snapdragon.sdk.display.IColorService   u:object_r:vendor_color_service:s0
+wfdservice                                     u:object_r:vendor_wfdservice_service:s0
+wfdservice64                                   u:object_r:vendor_wfdservice_service:s0
+wigigp2p                                       u:object_r:vendor_wigigp2p_service:s0
+wigig                                          u:object_r:vendor_wigig_service:s0
+display.smomoservice                           u:object_r:surfaceflinger_service:s0
+vendor.vpsservice                              u:object_r:vendor_vps_service:s0
+vendor.qspmsvc                                 u:object_r:vendor_qspmsvc_service:s0
+vendor.qti.hardware.display.config.IDisplayConfig/default u:object_r:vendor_hal_displayconfig_service:s0
+vendor.qti.gnss.ILocAidlGnss/default           u:object_r:hal_gnss_service:s0
+vendor.qti.hardware.radio.ims.IImsRadio/imsradio0         u:object_r:vendor_hal_telephony_service:s0
+vendor.qti.hardware.radio.ims.IImsRadio/imsradio1         u:object_r:vendor_hal_telephony_service:s0
+vendor.qti.hardware.radio.qtiradio.IQtiRadioStable/slot1         u:object_r:vendor_hal_telephony_service:s0
+vendor.qti.hardware.radio.qtiradio.IQtiRadioStable/slot2         u:object_r:vendor_hal_telephony_service:s0
+vendor.qti.hardware.radio.am.IQcRilAudio/slot1      u:object_r:vendor_hal_telephony_service:s0
+vendor.qti.hardware.radio.am.IQcRilAudio/slot2      u:object_r:vendor_hal_telephony_service:s0
+vendor.qvirtmgr                                u:object_r:vendor_qvirtmgr_service:s0
+vendor.qti.qesdsys.IQesdSys/default            u:object_r:vendor_qesdk_service:s0
+#line 1 "device/lge/sepolicy/qcom/private/service_contexts"
+# LGE private service
+# define as fuction catagory like below
+# # power, # camera etc..
+
+#FMRadio
+LGBroadcastRadioService       u:object_r:lge_system_server_service:s0
+##
+
+# UICC
+lguicc                        u:object_r:radio_service:s0
+lguiccpbm                     u:object_r:radio_service:s0
+##
+
+# MFW
+media.media_editor            u:object_r:mediaserver_service:s0
+###
+
+# LAP
+lge_property     u:object_r:lge_property_service:s0
+###
+
+# FOTA
+android.os.LGUpdateService                     u:object_r:update_engine_service:s0
+###
+
+# Telephony_Call_Framework
+callfwDebugService            u:object_r:radio_service:s0
+lge_voip                      u:object_r:radio_service:s0
+lge_voip.registry             u:object_r:radio_service:s0
+operator.dm                   u:object_r:radio_service:s0
+telephony_internalex          u:object_r:radio_service:s0
+###
+
+# IMS
+com.lge.ims.phone             u:object_r:ims_service:s0
+com.lge.server.ims.sms        u:object_r:ims_service:s0
+# LGE_CHANGE [SMS_Patch_0621][VZW], LGP_MSG_SMS_SMS_TO_911
+com.lge.server.ims.sms.scbm   u:object_r:ims_service:s0
+lgeims_mmpf                   u:object_r:ims_service:s0
+vzweab                        u:object_r:radio_service:s0
+vzwho                         u:object_r:radio_service:s0
+vzwsdm                        u:object_r:radio_service:s0
+vzwsip                        u:object_r:radio_service:s0
+###
+
+# LGDRM
+lgdrm                         u:object_r:lge_system_server_service:s0
+lgsecclk                      u:object_r:lge_system_server_service:s0
+###
+
+# MDM
+lgmdm_device_policy_manager   u:object_r:lgmdm_device_policy_service:s0
+###
+
+# MTV/DVB
+broadcast.dmb                 u:object_r:lgemtvserver_service:s0
+###
+
+# LGPowerManagerHelperService
+lgpowermanagerhelper          u:object_r:lge_system_server_service:s0
+#
+
+# SmartCover
+smartcover                    u:object_r:lge_system_server_service:s0
+###
+
+# PostureService
+postureservice                   u:object_r:lge_system_server_service:s0
+###
+
+# FlipMotionService
+flipmotionservice                   u:object_r:lge_system_server_service:s0
+###
+
+# DisplayFingerprint
+display_fingerprint           u:object_r:lge_system_server_service:s0
+###
+
+# SignBoard
+lighting_effect               u:object_r:lge_system_server_service:s0
+quickaccess                   u:object_r:lge_system_server_service:s0
+signboard                     u:object_r:lge_system_server_service:s0
+###
+
+# LGSystemUI
+keyguard_state_monitor        u:object_r:lge_system_server_service:s0
+secondary_systemui            u:object_r:lge_system_server_service:s0
+###
+
+# LED Service
+emotionled                    u:object_r:lge_system_server_service:s0
+
+# [CAS]
+lgcas                         u:object_r:lge_system_server_service:s0
+
+# DRM
+DRMService                    u:object_r:lge_system_server_service:s0
+
+###
+
+# EventHub
+eventhub                      u:object_r:lge_system_server_service:s0
+###
+
+# PerfTracker
+PtMgrService                  u:object_r:lge_system_server_service:s0
+###
+
+# LGThermalService
+lgthermal                     u:object_r:lge_system_server_service:s0
+#
+
+# LGMotorService
+lgmotorservice                u:object_r:lge_system_server_service:s0
+#
+
+# Payment
+CvmService                    u:object_r:lge_system_server_service:s0
+GiftcardService               u:object_r:lge_system_server_service:s0
+LGPayDaemonService            u:object_r:lge_system_server_service:s0
+MMEService                    u:object_r:lge_system_server_service:s0
+#
+
+# PKM
+kernel_monitoring             u:object_r:kernel_monitoring_service:s0
+###
+
+# encryption
+encryption        u:object_r:lge_encryption_service:s0
+lgsdencryption    u:object_r:lge_system_server_service:s0
+lgdevencryption   u:object_r:lge_system_server_service:s0
+
+# frp
+FrpService    u:object_r:lge_system_server_service:s0
+###
+
+# mdm
+MDMService    u:object_r:lge_system_server_service:s0
+###
+
+# hal
+BatteryHalInterfaceService    u:object_r:lge_system_server_service:s0
+ChargerHalInterfaceService    u:object_r:lge_system_server_service:s0
+DisplayBrightnessHalInterfaceService    u:object_r:lge_system_server_service:s0
+PlatformHalInterfaceService   u:object_r:lge_system_server_service:s0
+TouchHalInterfaceService      u:object_r:lge_system_server_service:s0
+StorageInfoHalInterfaceService  u:object_r:lge_system_server_service:s0
+wifiLgeHalManagerService      u:object_r:lge_system_server_service:s0
+BootPropertyHalInterfaceService      u:object_r:lge_system_server_service:s0
+DeviceStateHalInterfaceService    u:object_r:lge_system_server_service:s0
+#
+
+# WiFi Feature Loader
+lgwifi_feature          u:object_r:lgwifi_feature_service:s0
+
+# Data
+lgdataruntimefeature          u:object_r:lgdataruntimefeature_service:s0
+###
+
+# fingerprintUVTService
+fingerprintUVTService          u:object_r:fingerprint_service:s0
+###
+
+# lgfingerprintservice
+lgfingerprintservice        u:object_r:fingerprint_service:s0
+
+# Fido Hal Interface Service
+LgeFidoHalInterfaceService      u:object_r:lge_system_server_service:s0
+###
+
+# VeinService
+vein                           u:object_r:vein_service:s0
+
+# FacerecognitionService
+facerecognition             u:object_r:facerecognition_service:s0
+
+# wfdService
+wfdService                    u:object_r:lge_system_server_service:s0
+
+# WiFi
+wifiExtService                u:object_r:lge_system_server_service:s0
+###
+
+# WiFi P2p
+WfdsService                   u:object_r:lge_system_server_service:s0
+LGP2pService                  u:object_r:lgp2p_service:s0
+###
+
+# EchoLocate 2.0
+data_metric                   u:object_r:metric_service:s0
+###
+
+# IQI
+iqi                           u:object_r:iqi_service:s0
+###
+
+# Leccp
+leccp                         u:object_r:leccp_service:s0
+###
+
+#WiFi
+wifiSapService            u:object_r:lge_system_server_service:s0
+wifiOffloadingService     u:object_r:lge_system_server_service:s0
+###
+
+# faceglance
+lgfaceglancemanager           u:object_r:lge_system_server_service:s0
+###
+
+# OSF services
+unifiedSettingsService        u:object_r:osf_service:s0
+vzw_poa_service               u:object_r:osf_service:s0
+verizon_service               u:object_r:osf_service:s0
+extensionservice              u:object_r:osf_service:s0
+###
+
+# lgdebuggerd
+lgdebuggerd                   u:object_r:lgdebuggerd_service:s0
+###
+
+# LGVoiceprint
+lgvoiceprintservice           u:object_r:lge_system_server_service:s0
+###
+
+# LGSvaService
+lgsvaservice                  u:object_r:lge_system_server_service:s0
+###
+
+# LGPackageLabel
+lgpackagelabelservice         u:object_r:lge_system_server_service:s0
+###
+
+# osservice
+osservice                    u:object_r:lge_system_server_service:s0
+###
+
+# Display
+lgdisplay                     u:object_r:lge_system_server_service:s0
+###
+
+# CliptrayService
+cliptray                     u:object_r:lge_system_server_service:s0
+###
+
+# RoundCornerService
+RoundCornerService           u:object_r:lge_system_server_service:s0
+###
+
+# LGContextHubService
+LGContextHubService           u:object_r:lge_system_server_service:s0
+###
+
+# MirrorLink
+MirrorLinkLeccpAdapterService                  u:object_r:lge_system_server_service:s0
+com.lge.mirrorlink.IMirrorLinkHalService       u:object_r:lge_system_server_service:s0
+###
+
+# KTUCA
+ktuca                         u:object_r:ktuca_service:s0
+###
+
+# NFC
+nfcaddon                      u:object_r:nfc_service:s0
+nfcvendor                     u:object_r:nfc_service:s0
+nfcoperator                   u:object_r:nfc_service:s0
+felica                        u:object_r:nfc_service:s0
+###
+
+# OneHandOperation
+one_hand_operation            u:object_r:lge_system_server_service:s0
+###
+
+# RollableEffectManager
+rollable_effect_service       u:object_r:lge_system_server_service:s0
+###
+
+# Clue Api Service
+clue_api_service                 u:object_r:lge_clue_service:s0
+
+# DSAir Service
+DSAirService                     u:object_r:lge_system_server_service:s0
+
+# Tbase
+vendor.trustonic.teeservice.ITeeService u:object_r:tee_service:s0

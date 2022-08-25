@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+ <library name="com.lge.lghiddenlibs"
+          file="/system_ext/framework/lghiddenlibs.jar"
+          dependency="com.android.lge.lgsvcitems"/>
+</permissions>

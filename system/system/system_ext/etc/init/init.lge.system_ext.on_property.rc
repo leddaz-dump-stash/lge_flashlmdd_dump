@@ -1,0 +1,49 @@
+#######################################################
+# FILE_SYSTEM
+#######################################################
+on property:product.lge.vold.publicvolume_uuid=*
+    setprop vendor.lge.vold.publicvolume_uuid ${product.lge.vold.publicvolume_uuid}
+
+########################################
+# ADB-over-WIFI Port Open
+########################################
+on property:sys.boot_completed=1 && property:ro.debuggable=1 && property:persist.product.lge.rftest=1
+    setprop service.adb.tcp.port 5555
+    restart adbd
+
+on property:sys.boot_completed=1 && property:ro.debuggable=1 && property:persist.product.lge.rftest=0
+    setprop service.adb.tcp.port -1
+    restart adbd
+
+########################################
+# LGP-DATA
+########################################
+# LGP_DATA_PERFORMANCE_HELPING_CODE, y01.jeong@lge.com
+on property:ro.product.lge.5g_networks=true
+    write /proc/sys/net/core/rmem_max  16777216
+
+########################################
+# Ftrace Control for Perfetto with Crash Handler
+########################################
+# Enable then Turn off the Ftrace
+on property:product.lge.perfetto_enable=1
+    write /sys/kernel/tracing/tracing_on 0
+
+# Disable then Turn on the Ftrace for CrashHandler
+on property:product.lge.perfetto_enable=0
+    setprop persist.vendor.lge.service.crash.enable 1
+
+##############################################################
+# VZW safe mode requirement for bootlaoder factory reset memu
+##############################################################
+on property:ro.boot.product.lge.vzw_safe_mode=1
+    setprop persist.sys.safemode 1
+
+########################################
+# BSP Power
+########################################
+# Disable dex2oat service for test purpose
+on property:persist.product.lge.pm.dexopt.disable_bg_dexopt=true
+    setprop pm.dexopt.disable_bg_dexopt true
+on property:persist.product.lge.pm.dexopt.disable_bg_dexopt=false
+    setprop pm.dexopt.disable_bg_dexopt false

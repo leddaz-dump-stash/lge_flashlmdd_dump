@@ -1,0 +1,113 @@
+########################################
+# CAPP_NFS
+########################################
+service nfsserversetup /system/bin/nfsserversetup
+    class late_start
+    user root
+    oneshot
+
+########################################
+# CAPP_MPROFILER
+########################################
+service lgprofd /system/bin/lgprofd
+    socket lgprofd stream 666
+
+########################################
+# CAPP_NFS
+########################################
+service nfskill /system/bin/nfskillprocess
+    disabled
+    oneshot
+    user root
+
+on property:vold.decrypt=trigger_shutdown_framework
+    start nfskill
+
+########################################
+# bugreport is triggered by holding down volume down, volume up and power
+########################################
+service bugreport /system/bin/dumpstate -d -p -B -z \
+        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
+    class main
+    disabled
+    oneshot
+    keycodes 114 115 116
+
+########################################
+# LG RCT(Rooting Check Tool)
+########################################
+service rctd /system_ext/bin/rctd
+    class late_start
+    user root
+    group root
+    seclabel u:r:rctd:s0
+
+########################################
+# dms-ua@lge.com fota
+########################################
+service uncrypt-fota /system/bin/uncrypt --fota
+    class main
+    socket uncrypt stream 600 system system
+    disabled
+    oneshot
+
+service uncrypt-lcdoff /system/bin/uncrypt --lcdoff
+    class main
+    socket uncrypt stream 600 system system
+    disabled
+    oneshot
+
+########################################
+# LGP_DATA_DSQN
+########################################
+service dsqn /system_ext/bin/dsqn
+    disabled
+    user root
+
+on property:persist.product.lge.data.dsqn=1
+        start dsqn
+
+on property:persist.product.lge.data.dsqn=0
+        stop dsqn
+
+########################################
+# LGP_DATA_TCPIP_MPTCP
+########################################
+service socks /system_ext/bin/redsocks -c /system_ext/etc/redsocks.conf
+    disabled
+    user root
+
+on property:product.lge.data.mptcp.enabled=1
+        start socks
+
+on property:product.lge.data.mptcp.enabled=0
+        stop socks
+
+service socks-v6 /system_ext/bin/redsocks-v6 -c /system_ext/etc/redsocks_v6.conf
+    disabled
+    user root
+
+on property:product.lge.data.mptcp.enabled=1
+        start socks-v6
+
+on property:product.lge.data.mptcp.enabled=0
+        stop socks-v6
+
+########################################
+# platform_modem_bsp@lge.com ModemBSP
+########################################
+#LGE_CHANGE_S, Advanced MOCA, huny.lee@lge.com
+service moca_service /system_ext/bin/advanced_moca -s
+    class late_start
+    user root
+    group system sdcard_r sdcard_rw radio misc bluetooth
+    disabled
+    oneshot
+    socket Full.MOCA.port stream 660 system system
+
+on property:persist.product.lge.service.moca.enable=1
+    start moca_service
+
+on property:persist.product.lge.service.moca.enable=0
+    stop moca_service
+#LGE_CHANGE_E, Advanced MOCA, huny.lee@lge.com

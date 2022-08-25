@@ -1,0 +1,25 @@
+﻿De modo a melhorar a experiência geral do utilizador e permitir a resolução de problemas no dispositivo, são criados e armazenados Registos de Atividade no seu dispositivo móvel LGE. Os Registos de Atividade são armazenados exclusivamente no seu dispositivo e não são transferidos de forma remota para a LGE ou terceiros, salvo acordado em contrário em contrato separado.
+
+Os registos incluem as seguintes informações:
+- Estado do dispositivo móvel: modelo, versão de software, IMEI, número de identificação exclusivo, IMSI, estado de energia, estado da bateria, utilização da CPU/RAM/armazenamento interno, média do tempo de utilização, resultado do autodiagnóstico de hardware (Wi-Fi, BT, sensor de proximidade, sensor de luminosidade, sensor de impressões digitais, etc.)
+- Estado da rede
+- Informações sobre aplicações, contagem/estatística de utilização de aplicações
+- Estado da ligação do dispositivo móvel
+- Informações de erro: ecrã bloqueado, desligamentos involuntários, chamadas terminadas involuntariamente, erros em aplicações
+- Definição do dispositivo móvel
+
+Se você concorda com o acesso da LGE e uso das informações de Registo de atividade geradas por seu dispositivo, os itens de informações acessados pela LGE podem ser individualmente usados ou combinados na forma agregada. A LGE utiliza as informações para melhor compreender as necessidades dos seus clientes, melhorar o suporte aos seus clientes e melhorar os produtos e serviços que disponibiliza. Por exemplo, as informações de Registo de Atividade, permitem à LGE analisar e corrigir erros de rede, problemas de ligação e problemas de bateria.
+
+A LGE pode partilhar as informações de Registo de Atividade com os seguintes terceiros:
+- afiliados e subsidiárias (isso é, as empresas que controlam são controladas por ou estão sob titularidade comum com a LGE) ; e
+- agentes e fornecedores de serviços que estão ligados por obrigações de confidencialidade e que utilizam as informações exclusivamente em nome da LGE ou para fornecer os produtos e serviços solicitados ou para cumprir uma obrigação contratual perante si.
+
+A LGE exclui qualquer responsabilidade pelas práticas de privacidade de terceiros.
+A LGE solicitará também a recolha das informações de Registo de Atividade quando utiliza o Serviço Pós-venda da LGE ou o Serviço de Recuperação. Ser-lhe-á solicitado em separado, no momento de utilização destes serviços, se concorda com os seus respetivos termos.
+
+Apesar de as informações de Registo de Atividade serem geradas no seu dispositivo com ou sem a sua autorização, a menos que tenha clicado em "concordo", a LG não acederá a tais informações. Se você não quer que a LGE veja suas informações de Registo de atividade, você pode a qualquer momento bloquear nosso acesso às suas informações de Registo de atividade ao mudar as configurações [Definições – Sistema – Sobre o telefone – Registos de atividade]. Para compreender o modo como a LGE normalmente processa as suas informações, incluindo as informações do Registo de Atividade, consulte a nossa política de privacidade em [Definições – Sistema – Sobre o telefone – Informações legais – Documentos Legais do Software LG – Política de privacidade].
+
+Qualquer tradução deste documento de Registos de atividade é feita para requisitos locais e no evento de uma discrepância entre as versões em português e qualquer versão que não estiver em português, a versão em português deste documento de Registos de atividade prevalecerá, na medida em que não seja proibido pela lei local na sua jurisdição.
+
+Data de criação: 1 de nov, 2017
+Atualizado pela última vez: 1 de nov, 2020

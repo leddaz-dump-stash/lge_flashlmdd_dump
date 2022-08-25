@@ -1,0 +1,80 @@
+# LGE tweak background writeout
+on boot
+    write /proc/sys/vm/dirty_expire_centisecs 200
+    write /proc/sys/vm/dirty_background_ratio 5
+
+on post-fs-data
+    mkdir /data/ramoops 0755 root log
+
+on post-fs
+    mkdir /mnt/product/persist-lg/.sreadahead 0700 root root
+    chown root system /mnt/product/persist-lg/.sreadahead
+    chmod 0770 /mnt/product/persist-lg/.sreadahead
+
+    chown root system /mnt/product/persist-lg/.sreadahead/.sreadahead_done
+    chmod 0660 /mnt/product/persist-lg/.sreadahead/.sreadahead_done
+
+    chown root system /mnt/product/persist-lg/.sreadahead/.readahead_list.txt
+    chmod 0660 /mnt/product/persist-lg/.sreadahead/.readahead_list.txt
+    start sreadahead
+
+# LGE ramoops backup function service
+#service ramoops_backup /system_ext/bin/ramoops_backup.sh
+#    class main
+#    user root
+#    disabled
+#    oneshot
+
+# LGE time_in_stae function service
+service time_in_state /system_ext/bin/init.time_in_state.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+
+# LGE pstore backup function service
+service pstore_backup /system_ext/bin/pstore_backup.sh
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service sdcard_ramdump /system_ext/bin/sdcard_ramdump.sh
+    class main
+    user root
+    group media_rw
+    disabled
+    oneshot
+
+on property:service.bootanim.exit=1
+    start time_in_state
+#   start ramoops_backup
+    start pstore_backup
+    start sdcard_ramdump
+
+service bootinfo_backup /system_ext/bin/pstore_backup.sh ${sys.boot.reason}
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+on property:sys.boot_completed=1 && property:sys.boot.reason=*
+    start bootinfo_backup
+
+service sreadahead /system_ext/bin/treadahead
+    oneshot
+    user root
+    group root system
+    disabled
+    seclabel u:r:sreadahead:s0
+
+# make a diecision whether sreadahead would be performed or not.
+service sreadahead-check /system_ext/bin/sreadahead_check
+    class main
+    user root
+    group root system
+    oneshot
+    seclabel u:r:sreadahead-check:s0
+

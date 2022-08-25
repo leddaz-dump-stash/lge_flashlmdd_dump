@@ -1,0 +1,21 @@
+# SmartCA
+service smartca_undo /system_ext/bin/smartca_script.sh undo
+    user system
+    group system
+    disabled
+    oneshot
+
+service smartca_update /system_ext/bin/smartca_script.sh
+    user system
+    group system
+    disabled
+    oneshot
+
+on property:persist.vendor.lge.smartca.changed=1
+    start smartca_update
+
+on property:persist.vendor.lge.smartca.undo=1
+    start smartca_undo
+
+on property:persist.product.lge.msn_channel=ORG
+    setprop ro.product.brand1 orange
