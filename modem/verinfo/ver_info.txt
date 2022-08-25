@@ -1,0 +1,31 @@
+{
+    "Image_Build_IDs": {
+        "adsp": "ADSP.HT.5.0.1-00200.3-SM8150-1", 
+        "aop": "AOP.HO.1.1-00231-SM8150AAAAANAZO-1", 
+        "apps": "LA.UM.9.1.r1-11300-SMxxx0.0-2", 
+        "apps_sdx50m": "TN.BF.2.10-00063-SDX50MACIMAAAZA-1", 
+        "boot": "BOOT.XF.3.0.c4-00001-SM8150LZB-2", 
+        "boot_sdx50m": "BOOT.BF.3.5-00141-SDX50MAAAAANAZB-1", 
+        "btfm": "BTFM.CHE.2.1.4-00536-QCACHROMZ-1", 
+        "cdsp": "CDSP.HT.2.0.1-00177-SM8150-1", 
+        "common": "SM8150_SDX50M.LA_TN.1-5-2_2-2.c8-00091-STD.PROD-1", 
+        "glue": "GLUE.SM8150_LA_SDX50M_TN.1-5_2-0-00122-NOOP_TEST-1", 
+        "modem": "MPSS.HE.1.5.3.c1-00125-SM8150_GENFUSION_PACK-1.410866.5.454121.2", 
+        "modem_sdx50m": "MPSS.CE.2.1.c8-00198-SDX50MV2_RMTEFS_PACK-1.354299.3", 
+        "npu": "NPU.FW.1.0-00052-SM8150-1", 
+        "rpm_sdx50m": "RPM.BF.2.7-00060-SDX50MAAAAANAZR-1", 
+        "slpi": "SLPI.HY.2.2-00125-SM8150AZL-1", 
+        "tz": "TZ.XF.5.2-00264-SM8150AAAAANAZT-1", 
+        "tz_apps": "TZ.APPS.2.0-00209-SM8150AAAAANAZT-1", 
+        "tz_sdx50m": "TZ.BF.2.9-00170-SDX50MAAAAANAZT-1", 
+        "video": "VIDEO.IR.1.0-00074-PROD-1", 
+        "wdsp": "WDSP.9340.2.0-00046-W9340AAAAAAAZQ-1", 
+        "wlan": "WLAN.HL.3.2.0-01222-QCAHLSWMTPLZ-1"
+    }, 
+    "Metabuild_Info": {
+        "Meta_Build_ID": "SM8150_SDX50M.LA_TN.1-5-2_2-2.c8-00091-STD.PROD-1", 
+        "Product_Flavor": "asic", 
+        "Time_Stamp": "2022-05-17 15:28:12"
+    }, 
+    "Version": "1.0"
+}

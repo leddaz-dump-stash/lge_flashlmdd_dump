@@ -1,0 +1,12 @@
+modem.img
+system/system/app/WebViewGoogle/WebViewGoogle.apk
+system/system/priv-app/GmsCore/GmsCore.apk
+system/system/priv-app/Velvet/Velvet.apk
+system/system/system_ext/priv-app/LGSettings/LGSettings.apk
+system/system/system_ext/priv-app/LGSystemUI/LGSystemUI.apk
+product/priv-app/AvatarResource/AvatarResource.apk
+product/priv-app/ContentService/ContentService.apk
+product/priv-app/EllieVision/EllieVision.apk
+product/priv-app/GalleryStudio/GalleryStudio.apk
+product/priv-app/LGCameraApp/LGCameraApp.apk
+product/priv-app/LGVideoStudio/LGVideoStudio.apk

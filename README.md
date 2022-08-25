@@ -1,0 +1,14 @@
+# flashlmdd_lao_com-user 12 SKQ1.211103.001 2213712159780 release-keys
+- manufacturer: 
+- platform: msmnile
+- codename: flashlmdd
+- flavor: flashlmdd_lao_com-user
+- release: 12
+- id: SKQ1.211103.001
+- incremental: 2213712159780
+- tags: release-keys
+- fingerprint: lge/flashlmdd_lao_com/flashlmdd:11/RKQ1.210420.001/2213713329780:user/release-keys
+- is_ab: true
+- brand: lge
+- branch: flashlmdd_lao_com-user-12-SKQ1.211103.001-2213712159780-release-keys
+- repo: lge_flashlmdd_dump

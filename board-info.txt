@@ -1,0 +1,4 @@
+require version-baseband=1.5.3.c1-00125-SM8150_GENFUSION_PACK-1.484424.2.493040.3
+require version-baseband=2.1.c8-00206-SDX50MV2_RMTEFS_PACK-1.400300.2.410866.35
+require version-trustzone=TZ.XF.5.2-00266
+require version-vendor=1652761770

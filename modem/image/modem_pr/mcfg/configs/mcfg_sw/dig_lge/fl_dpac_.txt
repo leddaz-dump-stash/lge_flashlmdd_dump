@@ -1,0 +1,2 @@
+mcfg_sw/generic_/flashlmd/apac/row/dcm_row/mcfg_sw.mbn
+mcfg_sw/generic_/flashlmd/apac/dpac/dpac/mcfg_sw.mbn

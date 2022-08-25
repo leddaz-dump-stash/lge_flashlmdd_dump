@@ -1,0 +1,4 @@
+mcfg_sw/generic_/flash_la/korea/row/commerci/mcfg_sw.mbn
+mcfg_sw/generic_/flash_la/korea/lgu/commerci/mcfg_sw.mbn
+mcfg_sw/generic_/flash_la/korea/skt/commerci/mcfg_sw.mbn
+mcfg_sw/generic_/flash_la/korea/kt/commerci/mcfg_sw.mbn
