@@ -1,0 +1,8 @@
+service vendor.lge-fingertest-hal-1-0 /vendor/bin/hw/vendor.lge.hardware.fingertest@1.0-service-lazy
+    interface vendor.lge.hardware.fingertest@1.0::IFingerTest default
+    oneshot
+    disabled
+    class late_start
+    user system
+    group system
+    writepid /dev/cpuset/system-background/tasks

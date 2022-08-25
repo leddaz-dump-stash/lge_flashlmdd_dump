@@ -1,0 +1,54 @@
+# This file will be installed as vendor/etc/init/hw/init.{ro.hardware}.rc
+
+# Chipset vendor
+import /vendor/etc/init/hw/init.qcom.rc
+
+# For Kinibi(t-base) start
+import /vendor/etc/init/init.kinibi.rc
+# For Kinibi(t-base) end
+
+# to override init.qcom.rc and init.target.rc
+import /vendor/etc/init/hw/init.lge.usb.rc
+import /vendor/etc/init/hw/init.lge.usb.configfs.rc
+import /vendor/etc/init/hw/init.lge.power.rc
+import /vendor/etc/init/hw/init.lge.sensors.rc
+import /vendor/etc/init/hw/init.lge.fingerprints.rc
+import /vendor/etc/init/hw/init.lge.audio.rc
+import /vendor/etc/init/hw/init.lge.display.rc
+
+# import chipset common rc file
+import /vendor/etc/init/hw/init.msmnile.rc
+
+# import $(TARGET_PRODUCT) vendor rc file
+import /vendor/etc/init/hw/init.${ro.hardware}_vendor.rc
+
+# Begin Immersion Changes
+service immvibed /vendor/bin/immvibed -p 99 -u 1000
+    class late_start
+    user root
+    group root
+    ioprio rt 4
+
+# IMEI_Protection start
+# Add ipd service
+service vendor.ipd /vendor/bin/ipd
+    class main
+    user system
+    group radio system net_raw
+# IMEI_Protection end
+
+on post-fs
+# Support tuxera exfat filesystem
+    insmod /vendor/lib/modules/texfat.ko
+    mkdir /mnt/vendor/persist-lg/tof 0776 system camera
+
+########################################
+# BSP Touch DD
+########################################
+on property:vendor.lge.dd.touch_enable=1
+    insmod /vendor/lib/modules/touch_module_s3706.ko
+    restorecon /sys/devices/virtual/input/lge_touch/module
+    restorecon_recursive /sys/devices/virtual/input/lge_touch/module/
+
+on property:vendor.lge.dd.touch_enable=0
+    exec - root -- /vendor/bin/touch_dd.sh

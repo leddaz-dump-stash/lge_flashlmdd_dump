@@ -1,0 +1,10 @@
+service vendor.lge-sensortest-hal-1-2 /vendor/bin/hw/vendor.lge.hardware.sensortest@1.2-service-lazy
+    interface vendor.lge.hardware.sensortest@1.0::ISensorTest default
+    interface vendor.lge.hardware.sensortest@1.1::ISensorTest default
+    interface vendor.lge.hardware.sensortest@1.2::ISensorTest default
+    oneshot
+    disabled
+    class late_start
+    user system
+    group system
+    writepid /dev/cpuset/system-background/tasks

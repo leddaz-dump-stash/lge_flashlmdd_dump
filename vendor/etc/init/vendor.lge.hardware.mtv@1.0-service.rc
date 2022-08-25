@@ -1,0 +1,7 @@
+on post-fs-data
+   mkdir /data/vendor/mtv 0775 system system
+
+service vendor.lge-mtv-hal-1-0 /vendor/bin/hw/vendor.lge.hardware.mtv@1.0-service
+    class hal
+    user system
+    group system media

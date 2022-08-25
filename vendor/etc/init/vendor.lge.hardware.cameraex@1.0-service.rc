@@ -1,0 +1,4 @@
+service vendor.lge-cameraex-hal-1-0 /vendor/bin/hw/vendor.lge.hardware.cameraex@1.0-service
+    class hal
+    user system
+    group system media_rw sdcard_rw

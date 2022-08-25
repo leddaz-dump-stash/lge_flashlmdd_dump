@@ -1,0 +1,9 @@
+service vendor.lge-usb-gadget-hal-1-1 /vendor/bin/hw/android.hardware.usb.gadget@1.1-service-lge
+    interface android.hardware.usb.gadget@1.0::IUsbGadget default
+    interface android.hardware.usb.gadget@1.1::IUsbGadget default
+    class hal
+    user root
+    group root system shell mtp
+
+on boot
+    setprop sys.usb.configfs 2
